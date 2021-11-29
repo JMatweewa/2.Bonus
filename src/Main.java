@@ -1,16 +1,17 @@
 public class Main {
     public static void main(String[] args) {
         int balance = 100;
-        int depositAmount = 1101;
-        int bonusPrice = depositAmount / 100;
-        int totalBalance = balance + depositAmount;
+        int depositAmount = 100;
+
+        int bonusPrice;
         if (depositAmount > 1000) {
-            System.out.println("Ваш бонус составляет " + bonusPrice + " руб.");
-            System.out.println("На Вашем счету " + (totalBalance + bonusPrice) + " руб.");
+            bonusPrice = depositAmount / 100;
+            System.out.println("Ваши бонусы составляют " + bonusPrice + " руб.");
         } else {
-            System.out.println("На Вашем счету " + totalBalance + " руб.");
+            bonusPrice = 0;
         }
-
+        int totalBalance = balance + depositAmount + bonusPrice;
+        System.out.println("На Вашем счету " + totalBalance + " руб.");
     }
-
 }
+
